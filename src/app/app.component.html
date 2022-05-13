@@ -1,0 +1,52 @@
+<form id="contactForm" [formGroup]="contactForm" class="row justify-content-center d-flex">
+    <div class="col-sm-5 col-md-4">
+        <div *ngFor="let i of inputsConfig" class="form-floating mb-3">
+            <input-line [config]="i.config" [formControlName]="i.name"></input-line>
+            <span class="show-error-mesagge">{{errors[i.name] ? errors[i.name]: 'Invalid Field'}}</span>
+        </div>
+        <button [disabled]="!contactForm.valid" class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+    </div>
+</form>
+
+<!-- <div class="row justify-content-center d-flex">
+  <div class="form-floating mb-3">
+    <input-line [config]="{label:'mylabel'}" [(ngModel)]="title"></input-line>
+  </div>
+</div> -->
+<!-- <form id="contactForm" [formGroup]="contactForm" class="row justify-content-center d-flex">
+  <div class="col-sm-5 col-md-4">
+     
+      <div class="form-floating mb-3">
+          <input placeholder="fullName" formControlName="fullName">
+          <span 
+            class="show-error-mesagge"
+        >field is required</span>
+      </div>
+      
+      <div class="form-floating mb-3">
+        <input placeholder="emailAddress" formControlName="emailAddress">
+        <ng-container *ngIf="emailAddress?.errors && emailAddress?.touched">
+          <span 
+            class="error-mesagge"
+            *ngIf="emailAddress?.errors?.required"
+          >this field is required</span>
+          <span 
+            class="error-mesagge"
+            *ngIf="emailAddress?.hasError('email')"
+          >enter a valid email</span>
+        </ng-container>
+      </div>
+      
+      <div class="form-floating mb-3">
+        <input placeholder="phoneNumber" formControlName="phoneNumber">
+        <span *ngIf="contactForm.get('phoneNumber')?.errors && contactForm.get('phoneNumber')?.touched && contactForm.get('phoneNumber')?.hasError('required')"
+            class="show-error-mesagge"
+        >field is required</span>
+      </div>
+     
+      <div class="form-floating mb-3">
+        <input placeholder="description" formControlName="description">
+      </div>
+      <button [disabled]="!contactForm.valid" class="btn btn-primary btn-xl" id="submitButton" type="submit">Send</button>
+  </div>
+</form> -->

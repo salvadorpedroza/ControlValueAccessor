@@ -1,0 +1,15 @@
+.input-line{
+    outline: 0;
+    border-width: 0;
+    background-color: transparent;
+    width: 100%;
+}
+
+:host {
+    border-bottom: solid 1px #727272;
+    padding: 0 2px 5px;
+}
+
+.ng-invalid.ng-touched:host  {
+    border-color: #a10101;
+}

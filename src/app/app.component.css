@@ -1,0 +1,26 @@
+.ng-invalid.ng-touched  {
+    border-color: #a10101;  
+}
+
+.show-error-mesagge {
+    display: none;
+}
+
+.ng-invalid.ng-touched + .show-error-mesagge {
+    display: block;
+    border-color: #a10101;
+}
+
+input{
+    outline: none;
+}
+
+.error-mesagge {
+    border-color: #a10101;
+    display: block;
+}
+
+button[disabled]{
+    opacity: .3;
+}
+
